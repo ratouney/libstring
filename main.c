@@ -11,17 +11,56 @@
 #include <stdio.h>
 #include "ratstr.h"
 
+int slib_compare(t_string *data, char *str, int mode)
+{
+    int count;
+    int len;
+
+    count = 0;
+    if (slib_strlenv(data->string) > slib_strlenv(str))
+        return (2);
+    if (slib_strlenv(data->string) < slib_strlenv(str))
+        return (1);
+    len = (mode == 0 ? data->len(data) : mode);
+    while (count < len)
+    {
+        if (data->string[count] < str[count])
+            return (1);
+        else if (data->string[count] > str[count])
+            return (2);
+        else
+            count++;
+    }
+    return (0);
+}
+
+int slib_exist(t_string *data, char c)
+{
+    int count;
+    int len;
+
+    count = 0;
+    while (data->string[count] != '\0')
+    {
+        if (data->string[count] == c)
+            return (1);
+        else
+            count++;
+    }
+    return (0);
+}
+
 int main(int argc, char **argv)
 {
     char *temp = my_strpaste(argv[1], 0);
 
     t_string *str = slib_newstr(temp, 1);
 
-    str->show(str, 2);
-    char *line = str->sl(str, 5, 0);
-    printf("Line : [%s]\n", line);
+    //str->show(str, 2);
+    int rt = str->cmp(str, "Hello", 0);
+    rt = str->exist(str, 'c');
+    printf("Line : [%d]\n", rt);
 
-    free(line);
     delstr(str);
 
     return (0);

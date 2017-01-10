@@ -124,3 +124,8 @@ Getting the lenght of the current string :
 
     [RETURN]
         Number of caracters up to the null terminating caracter (same as strlen)
+
+
+Compare the string with another :
+
+    

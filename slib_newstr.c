@@ -21,5 +21,7 @@ t_string *slib_newstr(char *str, int mode)
     data->fuse = slib_fuse;
     data->show = slib_show;
     data->sl = slib_strsl;
+    data->cmp = slib_compare;
+    data->exist = slib_exist;
     return (data);
 }

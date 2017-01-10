@@ -5,6 +5,7 @@ Usage of the Library :
 
     Using the structure of type t_string
 
+
 Creation of a String :
 
     t_string *slib_newstr(char *str, int mode)
@@ -19,6 +20,7 @@ Creation of a String :
     [RETURN]
         Return a structure with the corresponding string
 
+
 Print content of a String :
 
     void str->show(t_string *str, int mode)
@@ -31,6 +33,7 @@ Print content of a String :
         1 == Prints a fancy presentation of the string
         2 == Same as number 1 but with a line jump after the string
 
+
 Deletion of a String :
 
     void    delstr(t_string *str)
@@ -41,7 +44,8 @@ Deletion of a String :
     [RETURN]
         Nothing...
 
-Adding text to current String ;
+
+Adding text to current String :
 
     char    *str->fuse(t_string *str, char *fuse, int mode)
 
@@ -60,3 +64,29 @@ Adding text to current String ;
     [RETURN]
         0, 1, 2 == Concatenation of both strings
         3 == NULL
+
+
+Copy content of the current String :
+    
+    char    *str->copy(t_string *str, int mode)
+
+    [Str]
+        Source string to be copied
+
+    [Mode]
+        0 == Copies all caracters (up to terminating caracter)
+        0 > Amount of caracters to be copied
+        (if a null terminating caracter is found, it's only copied up to it)
+
+    [RETURN]
+        A pointer to a malloc'ed string containting the copied string
+
+Getting the lenght of the current string :
+
+    int     str->len(t_string *str)
+
+    [Str]
+        String to parse
+
+    [RETURN]
+        Number of caracters up to the null terminating caracter (same as strlen)

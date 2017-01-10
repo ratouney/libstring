@@ -3,8 +3,9 @@ Thank Kuro for the idea ...
 
 Usage of the Library :
 
-    Using the structure of type t_string
-
+    Open a terminal and type [make re]
+    If no error appears, you will have a [libratstring.a] file
+    To use the library, just add it to your gcc compilation sources
 
 Creation of a String :
 

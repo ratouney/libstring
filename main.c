@@ -10,18 +10,37 @@
 
 #include "ratstr.h"
 
+char *slib_strsl(t_string *data, int from, int to)
+{
+    int count;
+    int min;
+    int max;
+    char *new;
+
+    min = (from >= 0 ? from : 0);
+    if (to == 0)
+        max = data->len(data);
+    else
+        max = (to <= data->len(data) ? to : data->len(data));
+    new = malloc(sizeof(char) * (max - min + 2));
+    count = -1;
+    while (++count + min < max)
+        new[count] = data->string[count + min];
+    new[count] = '\0';
+    return (new);
+}
+
 int main(int argc, char **argv)
 {
 
     char *temp = my_strpaste(argv[1], 0);
-    char *yolo = my_strpaste(argv[2], 0);
+    //char *yolo = my_strpaste(argv[2], 0);
 
     t_string *str = slib_newstr(temp, 1);
-    char *line = str->copy(str, 10);
-    str->fuse(str, yolo, 4);
 
-    printf("Len : %d\n", str->len(str));
     str->show(str, 2);
+    char *line = str->sl(str, 0, str->len(str));
+    printf("Line : [%s]\n", line);
 
     free(line);
     delstr(str);

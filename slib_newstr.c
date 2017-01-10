@@ -20,5 +20,6 @@ t_string *slib_newstr(char *str, int mode)
     data->copy = slib_strpaste;
     data->fuse = slib_fuse;
     data->show = slib_show;
+    data->sl = slib_strsl;
     return (data);
 }

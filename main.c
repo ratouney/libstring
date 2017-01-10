@@ -148,7 +148,7 @@ void slib_show(t_string *data, int mode)
     }
 }
 
-t_string *newstr(char *str, int mode)
+t_string *slib_newstr(char *str, int mode)
 {
     t_string *data;
 
@@ -173,7 +173,7 @@ int main(int argc, char **argv)
     char *temp = my_strpaste(argv[1], 0);
     char *yolo = my_strpaste(argv[2], 0);
 
-    t_string *str = newstr(temp, 1);
+    t_string *str = slib_newstr(temp, 1);
     char *line = str->copy(str, 10);
     str->fuse(str, yolo, 4);
 

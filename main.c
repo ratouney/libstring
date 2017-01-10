@@ -126,7 +126,7 @@ char *slib_fuse(t_string *data, char *fuse, int mode)
         free(data->string);
         free(fuse);
         data->string = new;
-        return ("ok");
+        return (NULL);
     }
 }
 
@@ -136,13 +136,13 @@ void slib_show(t_string *data, int mode)
         write(1, data->string, data->len(data));
     else if (mode == 1)
     {
-        write(1, "\nString : [", 11);
+        write(1, "String : [", 10);
         write(1, data->string, data->len(data));
         write(1, "]", 1);
     }
     else if (mode == 2)
     {
-        write(1, "\nString : [", 11);
+        write(1, "String : [", 10);
         write(1, data->string, data->len(data));
         write(1, "]\n", 2);
     }

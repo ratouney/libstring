@@ -10,7 +10,6 @@
 
 #include "ratstr.h"
 
-
 char *slib_strpaste(t_string *data, int mode)
 {
     int count;

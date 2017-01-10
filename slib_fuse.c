@@ -10,7 +10,6 @@
 
 #include "ratstr.h"
 
-
 char *slib_fuse(t_string *data, char *fuse, int mode)
 {
     int count;

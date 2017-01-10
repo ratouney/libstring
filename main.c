@@ -10,28 +10,6 @@
 
 #include "ratstr.h"
 
-char *slib_strsl(t_string *data, int from, int to)
-{
-    int count;
-    int min;
-    int max;
-    char *new;
-
-    if (to <= from && to != 0)
-        return (NULL);
-    min = (from >= 0 ? from : 0);
-    if (to == 0)
-        max = data->len(data);
-    else
-        max = (to <= data->len(data) ? to : data->len(data));
-    new = malloc(sizeof(char) * (max - min + 2));
-    count = -1;
-    while (++count + min < max)
-        new[count] = data->string[count + min];
-    new[count] = '\0';
-    return (new);
-}
-
 int main(int argc, char **argv)
 {
     char *temp = my_strpaste(argv[1], 0);
@@ -45,5 +23,5 @@ int main(int argc, char **argv)
     free(line);
     delstr(str);
 
-    return 0;
+    return (0);
 }

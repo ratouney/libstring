@@ -10,7 +10,6 @@
 
 #include "ratstr.h"
 
-
 int slib_strlen(t_string *data)
 {
     int count;

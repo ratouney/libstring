@@ -44,6 +44,7 @@ int slib_strlen(t_string *data);
 char *slib_strpaste(t_string *data, int mode);
 char *slib_fuse(t_string *data, char *fuse, int mode);
 void slib_show(t_string *data, int mode);
+char *slib_strsl(t_string *data, int from, int to);
 t_string *slib_newstr(char *str, int mode);
 char *slib_strsl(t_string *data, int from, int to);
 void *delstr(t_string *data);

@@ -14,36 +14,10 @@ int my_strlen(char *str)
 {
     int count;
 
-    count = 0;
-    while (str[count] != '\0')
-        count++;
-    return (count);
-}
-
-char *my_concatenate(char *str1, char *str2, int mode)
-{
-    int count;
-    int cunt;
-    char *new;
-
-    new = malloc(sizeof(char) * (my_strlen(str1) + my_strlen(str2) + 1));
     count = -1;
-    while (str1[++count] != '\0')
-        new[count] = str1[count];
-    cunt = -1;
-    while (str2[++cunt] != '\0')
-        new[count + cunt] = str2[cunt];
-    new[count + cunt] = '\0';
-    if (mode == 1)
-        free(str1);
-    else if (mode == 2)
-        free(str2);
-    else if (mode == 3)
-    {
-        free(str1);
-        free(str2);
-    }
-    return (new);
+    while (str[++count] != '\0')
+        ;
+    return (count);
 }
 
 char *my_strpaste(char *str, int mode)
@@ -78,7 +52,9 @@ char *slib_strpaste(t_string *data, int mode)
     char *new;
 
     count = 0;
-    len = (mode == 0 ? data->len(data) : (mode > data->len(data) ? data->len(data) : mode));
+    len = (mode == 0 ? data->len(data) : (mode > data->len(data)
+                                              ? data->len(data)
+                                              : mode));
     new = malloc(sizeof(char) * (len + 1));
     while (count < len)
     {

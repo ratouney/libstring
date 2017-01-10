@@ -1,4 +1,4 @@
-# libstring
+# Libstring made by Ratouney [++plKuro]
 Thank Kuro for the idea ...
 
 Usage of the Library :
@@ -128,4 +128,3 @@ Getting the lenght of the current string :
 
 Compare the string with another :
 
-    

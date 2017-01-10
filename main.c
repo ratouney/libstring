@@ -8,6 +8,7 @@
 ** Last update Wed Nov 30 18:19:49 2016 ratouney
 */
 
+#include <stdio.h>
 #include "ratstr.h"
 
 int main(int argc, char **argv)

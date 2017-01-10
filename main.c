@@ -17,6 +17,8 @@ char *slib_strsl(t_string *data, int from, int to)
     int max;
     char *new;
 
+    if (to <= from && to != 0)
+        return (NULL);
     min = (from >= 0 ? from : 0);
     if (to == 0)
         max = data->len(data);
@@ -32,14 +34,12 @@ char *slib_strsl(t_string *data, int from, int to)
 
 int main(int argc, char **argv)
 {
-
     char *temp = my_strpaste(argv[1], 0);
-    //char *yolo = my_strpaste(argv[2], 0);
 
     t_string *str = slib_newstr(temp, 1);
 
     str->show(str, 2);
-    char *line = str->sl(str, 0, str->len(str));
+    char *line = str->sl(str, 5, 0);
     printf("Line : [%s]\n", line);
 
     free(line);

@@ -83,6 +83,38 @@ Copy content of the current String :
     [RETURN]
         A pointer to a malloc'ed string containting the copied string
 
+Copy a part of the current string :
+
+    char *str->sl(t_string *str, int from, int to)
+
+    [Str]
+        Source string to check
+
+    [From]
+        Start copying from here (if it's negative, it'll start from 0)
+
+    [To]
+        Copy up to before this point (it it's bigger than str->len(str), it will only copy up to that
+        Replace it with 0, if you want to select up to the end.
+
+    [Exemple with "Hello world !" ]
+
+        str->sl (3, 20)
+            == > "lo world !"
+
+        str->sl (-2, 2)
+            == > "He"
+        
+        str->sl (5, 0)
+            == > " World !"
+
+        str->sl (6, 3)
+            == > NULL
+
+    [RETURN]
+        On success, it returns a pointer to a new malloc'ed string between the selected limits
+        If [From] > [To], it returns NULL.
+
 Getting the lenght of the current string :
 
     int     str->len(t_string *str)

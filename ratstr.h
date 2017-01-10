@@ -25,3 +25,12 @@ struct s_string
     char *(*fuse)(t_string *, char *, int);
     void (*show)(t_string *, int);
 };
+
+int slib_strlenv(char *str);
+char *my_strpaste(char *str, int mode);
+int slib_strlen(t_string *data);
+char *slib_strpaste(t_string *data, int mode);
+char *slib_fuse(t_string *data, char *fuse, int mode);
+void slib_show(t_string *data, int mode);
+t_string *slib_newstr(char *str, int mode);
+void *delstr(t_string *data);

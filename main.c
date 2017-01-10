@@ -43,11 +43,11 @@ int slib_exist(t_string *data, char c)
     while (data->string[count] != '\0')
     {
         if (data->string[count] == c)
-            return (1);
+            return (count);
         else
             count++;
     }
-    return (0);
+    return (-1);
 }
 
 int main(int argc, char **argv)

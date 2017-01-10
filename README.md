@@ -128,3 +128,34 @@ Getting the lenght of the current string :
 
 Compare the string with another :
 
+    int     str->cmp(t_string *str, char *cmp, int mode)
+
+    [Str]
+        Current string
+
+    [Cmp]
+        String to compare with
+
+    [Mode]
+        0 == Compare full strings
+        0 > Compare a fixed number of caraters fixed from the start
+
+    [RETURN]
+        0 == If the strings are equal
+        1 == If the first string is bigger (first different caracter value is higher)
+        2 == If the second string is bigger
+
+
+Check if a caracter exists in the string :
+
+    int     str->exist(t_string *str, char character)
+
+    [Str]
+        String to search in
+
+    [character]
+        Caracter to search
+
+    [RETURN]
+        -1 == Caracter was not found
+        0 >= Spot in the string were it was first found

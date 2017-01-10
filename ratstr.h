@@ -8,8 +8,19 @@
 ** Last update Wed Nov 30 18:19:49 2016 ratouney
 */
 
+#ifndef unst_h_
+#define unst_h_
 #include <unistd.h>
+#endif /* !unst_h_ */
+
+#ifndef stli_h
+#define stli_h_
 #include <stdlib.h>
+#endif /* !stli_h */
+
+#ifndef ratstring_h_
+#define ratstring_h_
+
 #include <stdio.h>
 
 struct s_string;
@@ -34,3 +45,5 @@ char *slib_fuse(t_string *data, char *fuse, int mode);
 void slib_show(t_string *data, int mode);
 t_string *slib_newstr(char *str, int mode);
 void *delstr(t_string *data);
+
+#endif /* !ratstring_h_ */

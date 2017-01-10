@@ -56,10 +56,11 @@ Adding text to current String :
         String to concatenate at the end of the main strucute's string
     
     [Mode]
-        0 == Free's the structure's string
-        1 == Free's the [Fuse] string
-        2 == Free's both strings
-        3 == Free's both strings and put the concatenation into the structure
+        0 == Free nothing
+        1 == Free's the structure's string
+        2 == Free's the [Fuse] string
+        3 == Free's both strings
+        4 == Free's both strings and put the concatenation into the structure
 
     [RETURN]
         0, 1, 2 == Concatenation of both strings

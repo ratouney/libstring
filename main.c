@@ -103,31 +103,16 @@ char *slib_fuse(t_string *data, char *fuse, int mode)
     while (fuse[++cunt] != '\0')
         new[count + cunt] = fuse[cunt];
     new[count + cunt] = '\0';
-    if (mode == 0)
-        return (new);
-    if (mode == 1)
-    {
+    if (mode == 1 || mode == 3 || mode == 4)
         free(data->string);
-        return (new);
-    }
-    if (mode == 2)
-    {
+    if (mode == 2 || mode == 3 || mode == 4)
         free(fuse);
-        return (new);
-    }
-    if (mode == 3)
-    {
-        free(data->string);
-        free(fuse);
-        return (new);
-    }
     if (mode == 4)
     {
-        free(data->string);
-        free(fuse);
         data->string = new;
         return (NULL);
     }
+    return (new);
 }
 
 void slib_show(t_string *data, int mode)

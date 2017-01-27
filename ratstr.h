@@ -13,6 +13,8 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# define stcp(x, y, z) x->cmp(x, y, z)
+# define shst(x, y) x->show(x, y)
 
 struct s_string;
 

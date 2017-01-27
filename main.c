@@ -56,10 +56,9 @@ int main(int argc, char **argv)
 
     t_string *str = slib_newstr(temp, 1);
 
-    //str->show(str, 2);
+    
     int rt = str->cmp(str, "Hello", 0);
-    rt = str->exist(str, 'c');
-    printf("Line : [%d]\n", rt);
+    int tr = stcp(str, "Hello", 0);
 
     delstr(str);
 
